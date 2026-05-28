@@ -1,19 +1,25 @@
-
-
-function Name()
-{
-    return <h1>
-        Stark Terry
-    </h1>
-}
-
+import { Experiences } from "./experience"
+import { Header } from "./header"
+import { Educations } from "./education"
+import { Certificates } from "./certificates"
+import { Skills } from "./skills"
+import { Languages } from "./languages"
 
 
 
 function CVPage()
 {
     return <div>
-        <Name />
+        <Header />
+        <main>
+        <Experiences/>
+        <Educations />
+        </main>
+        <footer>
+            <Certificates />
+            <Skills/>
+            <Languages />
+        </footer>
     </div>
 }
 
