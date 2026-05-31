@@ -1,6 +1,6 @@
 function Language()
 {
-    return <div className="skill">
+    return <div className="language">
         <h3>
             Language 
         </h3>

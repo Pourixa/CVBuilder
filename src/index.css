@@ -1,0 +1,197 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 21cm;
+    justify-content: space-around;
+}
+.editHead , .editExperience ,
+ .editEducation , .editCertificate ,
+ .editSkill , .editLanguage
+
+{ 
+    display: grid;
+    grid-template-columns: repeat(2 ,1fr);
+    gap: 1em;
+    border: solid 2px black;
+    margin: .5em;
+    padding: .5em;
+}
+
+.Input
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.date
+{
+    display: flex;
+    gap: 1em;
+}
+
+.CVPage
+{
+     border: solid 2px black;
+        margin: .5em;
+    padding: .5em;
+    max-width: 21cm;
+    max-height: 29.7cm;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding-bottom: .5em;
+}
+
+.CVPage h2:nth-child(2)
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: .5em;
+}
+
+.contact {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+padding: .5em;
+margin-bottom: .5em;
+}
+
+.contact > ul
+{    
+    list-style: none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.contact > ul >li{
+    border-right: solid black 2px;
+    padding: .5em;
+}
+.contact > ul > li:last-child
+{
+border: none
+;}
+/* //////////////////////////// */
+.jobDate
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.experience {
+    padding: .5em;
+}
+.experience > h4 
+{
+    padding: 0.5;
+    padding-bottom: .5em;
+}
+.experience > ul{
+    padding-left: .5em;
+}
+.experience > ul > li {
+    margin-bottom: 0.5em;
+}
+.experience > ul > li:last-child {
+    margin-bottom: 0;
+}
+.experiences{
+    border-bottom: 2px black solid;
+    margin-bottom: 0.5em;
+}
+
+/* ///////////////////// */
+.formDate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.uniDeg{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.education{
+    padding: .5em;
+}
+.education:last-child{
+    padding-bottom: 0;
+}
+
+.educations{
+    border-bottom: black solid 2px;
+    margin-bottom: 0.5em;
+}
+
+/* /////////////////// */
+
+.certificate{
+    display: flex;
+    align-items: center;
+    gap:1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        justify-self: center;
+
+}
+.certificates > h2
+{
+    grid-column: 1/3;
+}
+
+.certificates{
+    align-items: center;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: min-content min-content ;
+gap: .5em
+;
+border-bottom: 2px solid black;
+margin-bottom: 0.5em;}
+
+/* ////////// */
+.skills > h2 {
+    grid-column: 1/5;
+}
+
+.skills > h3 {
+    justify-self: center;
+}
+
+.skills
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: black 2px solid;
+    margin-bottom: 0.5em;
+}
+
+/* ///// */
+.languages > h2 {
+    grid-column: 1/4;
+}
+
+.language{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.languages {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

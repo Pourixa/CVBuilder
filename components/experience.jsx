@@ -24,7 +24,7 @@ function Achievements()
 
 function Experience()
 {
-    return <>
+    return <div className="experience">
     <div className="jobDate">
         <Job />
         <Date />
@@ -41,13 +41,13 @@ function Experience()
             <Achievements />
         </li>
     </ul>
-    </>
+    </div>
 
 }
 
 function Experiences()
 {
-    return <div className = "experience">
+    return <div className = "experiences">
         <h2>EXPERIENCE</h2>
         <Experience />
         <Experience />

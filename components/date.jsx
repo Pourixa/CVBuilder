@@ -14,8 +14,9 @@ function EndDate()
 
 function Date()
 {
-    return  <div>
+    return  <div className="date">
             <StartDate />
+            <p> - </p>
             <EndDate />
         </div>
 }

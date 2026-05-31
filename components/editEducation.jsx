@@ -10,7 +10,7 @@ const fields = [
 
 function EducationForm()
 {
-    return <div className="educationFrom">
+    return <div className="editEducation">
         {fields.map((field) => {
            return <Input key={field.label} {...field}/>
         }) }

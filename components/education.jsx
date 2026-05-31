@@ -23,8 +23,8 @@ function Degree()
 
 function Education()
 {
-    return <>
-    <div className="FormDate">
+    return <div className="education">
+    <div className="formDate">
         <Fomration />
         <Date />
     </div>
@@ -32,12 +32,12 @@ function Education()
         <University />
         <Degree />
     </div>
-    </>
+    </div>
 }
 
 function Educations()
 {
-    return <div className="education">
+    return <div className="educations">
         <h2>EDUCATION</h2>
         <Education />
         <Education />

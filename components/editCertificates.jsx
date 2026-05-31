@@ -7,7 +7,7 @@ const fields = [
 
 function CertificateForm()
 {
-    return <div className="certificateForm">
+    return <div className="editCertificate">
         {fields.map((field) => {
             return <Input key={field.label} {...field}/>;
         })}

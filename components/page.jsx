@@ -5,11 +5,9 @@ import { Certificates } from "./certificates"
 import { Skills } from "./skills"
 import { Languages } from "./languages"
 
-
-
 function CVPage()
 {
-    return <div>
+    return <div className="CVPage">
         <Header />
         <main>
         <Experiences/>
