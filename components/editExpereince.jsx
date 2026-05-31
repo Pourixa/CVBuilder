@@ -13,8 +13,10 @@ function JobForm() {
       {fields.map((field) => (
         <Input key={field.label} {...field} />
       ))}
-      <h3>Achievements</h3>
-      <textarea name="achievements" id="achievements"></textarea>
+      <div className="Input">
+        <h3>Achievements</h3>
+        <textarea name="achievements" id="achievements"></textarea>
+      </div>
     </div>
   )
 }

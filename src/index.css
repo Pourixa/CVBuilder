@@ -1,13 +1,26 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
+    font-family: Roboto;
 }
 
+:root
+{
+    --firstColor : #BFC0C0;
+    --secondColor : #EF8354;
+    --thirdColor : #4F5D75;
+}
+
+
 body {
+    background-color: var(--firstColor);
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 1fr 21cm;
-    justify-content: space-around;
+    grid-template-columns: 0.9fr 21cm;
+    justify-content: center;
 }
 .editHead , .editExperience ,
  .editEducation , .editCertificate ,
@@ -18,8 +31,13 @@ body {
     grid-template-columns: repeat(2 ,1fr);
     gap: 1em;
     border: solid 2px black;
+    border-radius: 10px;
     margin: .5em;
     padding: .5em;
+    background-color: var(--thirdColor);
+}
+.edit{
+    margin-right: 1.5em;
 }
 
 .Input
@@ -41,6 +59,9 @@ body {
     padding: .5em;
     max-width: 21cm;
     max-height: 29.7cm;
+    min-width: 21cm;
+    min-height: 29.7cm;
+    background-color: white;
 }
 
 .name {
@@ -195,3 +216,28 @@ margin-bottom: 0.5em;}
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+/* STYLES */
+
+
+
+.Input {
+    background-color: var(--secondColor);
+    border-radius: 10px;
+    padding: 0.25EM;
+}
+
+.Input > input {
+    padding: 0.5em;  
+    border: 2px black solid;
+    border-radius: 5px;
+
+}
+
+.Input > input:active , 
+.Input > input:focus {
+    outline: none;
+    border: 2px rgb(0, 132, 255) solid;
+}
+
+
