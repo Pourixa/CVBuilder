@@ -15,8 +15,6 @@ function Certificates()
     return <div className="certificates">
         <h2>CERTIFICATES</h2>
         <Certificate />
-        <Certificate />
-        <Certificate />
     </div>
 }
 

@@ -1,71 +1,72 @@
-function FirstName()
+
+function FirstName({firstName})
 {
     return <h1>
-        Stark
+        {firstName}
     </h1>
 }
-function LastName()
+function LastName({lastName})
 {
     return <h1>
-        Terry
+        {lastName}
     </h1>
 }
 
-function Attributes()
+function Attribute({attribute})
 {
     return <h2>
-        Prof | SwordsMan | Pilot
+        {attribute}
     </h2>
 }
 
-function Telephone()
+function Telephone({telephone})
 {
     return <h3>
-        756433453
+        {telephone}
     </h3>
 }
-function Email()
+function Email({email})
 {
 return <h3>
-    stark@example.com
-</h3>
-}
-
-function LinkedIn()
-{
-    return <h3>
-        linked.in
+    {email}
     </h3>
 }
 
-function Location ()
+function LinkedIn({linkedIn})
 {
     return <h3>
-        Texas
+        {linkedIn}
+        </h3>
+}
+
+function Location ({location})
+{
+    return <h3>
+        {location}
     </h3>
 }
 
-function Header()
+function Header({data})
 {
     return <header>
         <div className="name">
-            <FirstName /> 
-            <LastName />
+            <FirstName firstName={ data.firstname } /> 
+            <LastName lastName={data.lastname}/>
         </div>
-        <Attributes />
+        <Attribute attribute = {data.profession}/>
         <div className="contact">
             <ul>
                 <li>
-                    <Telephone />
+                    <Telephone telephone={data.telephone} />
                 </li>
                 <li>
-                    <Email />
+                    <Email email={data.email} />
                 </li>
                 <li>
-                    <LinkedIn />
+                    <LinkedIn linkedIn={data.linkedin}/>
                 </li>
                 <li>
-                    <Location />
+                    <Location location={data.location}/>
                 </li>
             </ul>
         </div>

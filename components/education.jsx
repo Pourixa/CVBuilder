@@ -40,8 +40,6 @@ function Educations()
     return <div className="educations">
         <h2>EDUCATION</h2>
         <Education />
-        <Education />
-        <Education />
     </div>
 }
 

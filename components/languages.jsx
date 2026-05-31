@@ -15,7 +15,6 @@ function Languages()
     return <div className="languages">
         <h2>LANGUAGES</h2>
         <Language />
-        <Language />
 
     </div>
 }

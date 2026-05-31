@@ -50,8 +50,6 @@ function Experiences()
     return <div className = "experiences">
         <h2>EXPERIENCE</h2>
         <Experience />
-        <Experience />
-        <Experience />
     </div>
 }
 

@@ -5,10 +5,10 @@ import { Certificates } from "./certificates"
 import { Skills } from "./skills"
 import { Languages } from "./languages"
 
-function CVPage()
+function CVPage({data})
 {
     return <div className="CVPage">
-        <Header />
+        <Header data={data.generalInfo}/>
         <main>
         <Experiences/>
         <Educations />

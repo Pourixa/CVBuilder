@@ -4,10 +4,10 @@ import { JobForm } from "./editExpereince"
 import { EditHeader } from "./editGeneral"
 import { LanguageForm } from "./editLanguage"
 import { SkillForm } from "./editSkills"
-function Edit()
+function Edit({editData})
 {
     return <div className="edit">
-        <EditHeader/>
+        <EditHeader editData={editData} />
         <JobForm/>
         <EducationForm/>    
         <CertificateForm/>
