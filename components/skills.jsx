@@ -1,22 +1,16 @@
-function Skill()
-{
-    return <h3>
-            SkillName 
-        </h3>
-    
+function Skill({ skill }) {
+  return <h3>{skill}</h3>
 }
 
-function Skills()
-{
-    return <div className="skills">
-        <h2>SKILLS</h2>
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
-        <Skill />
+function Skills({ skills }) {
+  return (
+    <div className="skills">
+      <h2>SKILLS</h2>
+      {skills.map((skill, index) => (
+        <Skill key={index} skill={skill} />
+      ))}
     </div>
+  )
 }
 
-export {Skills}
+export { Skills }

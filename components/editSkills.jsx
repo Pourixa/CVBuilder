@@ -1,10 +1,21 @@
-import { Input } from "./input";
+import { Input } from './input'
 
-
-function SkillForm()
-{
-    return <div className="editSkill">
-        <Input label={"Skill"} type={"text"} placeholder={"Social"} />
+function SkillForm({ skills, onSkillChange }) {
+  return (
+    <div className="editSkill">
+      {skills.map((skill, index) => (
+        <Input
+          key={index}
+          label="Skill"
+          name="skill"
+          type="text"
+          value={skill}
+          onChange={e => onSkillChange(index, e.target.value)}
+          placeholder="Social"
+        />
+      ))}
     </div>
+  )
 }
-export {SkillForm};
+
+export { SkillForm }

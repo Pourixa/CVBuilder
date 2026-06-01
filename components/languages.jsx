@@ -1,22 +1,21 @@
-function Language()
-{
-    return <div className="language">
-        <h3>
-            Language 
-        </h3>
-        <h3>
-            Level
-        </h3>
+function Language({ language, level }) {
+  return (
+    <div className="language">
+      <h3>{language}</h3>
+      <h3>{level}</h3>
     </div>
+  )
 }
 
-function Languages()
-{
-    return <div className="languages">
-        <h2>LANGUAGES</h2>
-        <Language />
-
+function Languages({ languages }) {
+  return (
+    <div className="languages">
+      <h2>LANGUAGES</h2>
+      {languages.map(item => (
+        <Language key={item.id} {...item} />
+      ))}
     </div>
+  )
 }
 
-export {Languages}
+export { Languages }

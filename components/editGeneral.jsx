@@ -1,31 +1,32 @@
-import { Input } from "./input"
-
+import { Input } from './input'
 
 const headerFields = [
-  { label: "First Name", type: "text", placeholder: "John"  },
-  { label: "Last Name", type: "text", placeholder: "Doe" },
-  { label: "Profession", type: "text", placeholder: "Senior Programmer" },
-  { label: "Telephone", type: "tel", placeholder: "012345678" },
-  { label: "Email", type: "email", placeholder: "john.doe@jd.com" },
-  { label: "LinkedIn", type: "text", placeholder: "John Doe" },
-  { label: "Location", type: "text", placeholder: "Texas" }
+  { label: 'First Name', name: 'firstname', type: 'text', placeholder: 'John' },
+  { label: 'Last Name', name: 'lastname', type: 'text', placeholder: 'Doe' },
+  { label: 'Profession', name: 'profession', type: 'text', placeholder: 'Senior Programmer' },
+  { label: 'Telephone', name: 'telephone', type: 'tel', placeholder: '012345678' },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john.doe@jd.com' },
+  { label: 'LinkedIn', name: 'linkedin', type: 'text', placeholder: 'John Doe' },
+  { label: 'Location', name: 'location', type: 'text', placeholder: 'Texas' }
 ]
 
-
-
-function EditHeader({editData}) {
-  function handleChange (e)
-  {
-    editData("generalInfo",e.target.previousSibling.textContent.toLowerCase().replace(/\s/g, ""),e.target.value)
+function EditHeader({ generalInfo, onGeneralChange }) {
+  const handleChange = e => {
+    onGeneralChange(e.target.name, e.target.value)
   }
+
   return (
     <div className="editHead">
-      {headerFields.map((field) => (
-        <Input key={field.label} handleChange = {(e) => {handleChange(e)}} {...field} />
+      {headerFields.map(field => (
+        <Input
+          key={field.name}
+          value={generalInfo[field.name] || ''}
+          onChange={handleChange}
+          {...field}
+        />
       ))}
     </div>
   )
 }
 
-
-export {EditHeader}
+export { EditHeader }

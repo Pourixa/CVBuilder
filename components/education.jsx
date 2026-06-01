@@ -1,46 +1,29 @@
-import { Date } from "./date"
+import { Date } from './date'
 
-function Fomration()
-{
-    return <h3>
-        Computer Science
-    </h3>
-}
-
-function University()
-{
-    return <h3>
-        New York
-    </h3>
-}
-
-function Degree()
-{
-    return <h3>
-        License
-    </h3>
-}
-
-function Education()
-{
-    return <div className="education">
-    <div className="formDate">
-        <Fomration />
-        <Date />
+function Education({ formation, degree, university, startDate, endDate }) {
+  return (
+    <div className="education">
+      <div className="formDate">
+        <h3>{formation}</h3>
+        <Date startDate={startDate} endDate={endDate} />
+      </div>
+      <div className="uniDeg">
+        <h3>{university}</h3>
+        <h3>{degree}</h3>
+      </div>
     </div>
-    <div className="uniDeg">
-        <University />
-        <Degree />
-    </div>
-    </div>
+  )
 }
 
-function Educations()
-{
-    return <div className="educations">
-        <h2>EDUCATION</h2>
-        <Education />
+function Educations({ educations }) {
+  return (
+    <div className="educations">
+      <h2>EDUCATION</h2>
+      {educations.map(item => (
+        <Education key={item.id} {...item} />
+      ))}
     </div>
+  )
 }
 
-export {Educations}
+export { Educations }

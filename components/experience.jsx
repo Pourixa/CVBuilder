@@ -1,56 +1,31 @@
-import { Date } from "./date"
-function Job()
-{
-   return <h3>
-    Data Analyst
-    </h3>
-}
+import { Date } from './date'
 
-function Company()
-{
-    return <h4>
-        Nowhere land
-    </h4>
-}
-
-
-
-function Achievements()
-{
-    return <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, consequuntur!
-    </p>
-}
-
-function Experience()
-{
-    return <div className="experience">
-    <div className="jobDate">
-        <Job />
-        <Date />
+function Experience({ job, company, startDate, endDate, achievements }) {
+  return (
+    <div className="experience">
+      <div className="jobDate">
+        <h3>{job}</h3>
+        <Date startDate={startDate} endDate={endDate} />
+      </div>
+      <h4>{company}</h4>
+      <ul>
+        {achievements.map((achievement, index) => (
+          <li key={index}>{achievement}</li>
+        ))}
+      </ul>
     </div>
-    <Company/>
-    <ul>
-        <li>
-            <Achievements />
-        </li>
-        <li>
-            <Achievements />
-        </li>
-        <li>
-            <Achievements />
-        </li>
-    </ul>
-    </div>
-
+  )
 }
 
-function Experiences()
-{
-    return <div className = "experiences">
-        <h2>EXPERIENCE</h2>
-        <Experience />
+function Experiences({ experiences }) {
+  return (
+    <div className="experiences">
+      <h2>EXPERIENCE</h2>
+      {experiences.map(item => (
+        <Experience key={item.id} {...item} />
+      ))}
     </div>
+  )
 }
 
-export {Experiences};
+export { Experiences }

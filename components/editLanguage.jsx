@@ -1,9 +1,30 @@
-import { Input } from "./input";
-function LanguageForm()
-{
-    return <div className="editLanguage">
-        <Input label={"Language"} type={"text"} placeholder={"French"} />
-        <Input label={"Level"} type={"text"} placeholder={"C1"} />
+import { Input } from './input'
+
+function LanguageForm({ languages, onLanguageChange }) {
+  return (
+    <div className="editLanguage">
+      {languages.map((language, index) => (
+        <div key={language.id}>
+          <Input
+            label="Language"
+            name="language"
+            type="text"
+            value={language.language}
+            onChange={e => onLanguageChange(index, 'language', e.target.value)}
+            placeholder="French"
+          />
+          <Input
+            label="Level"
+            name="level"
+            type="text"
+            value={language.level}
+            onChange={e => onLanguageChange(index, 'level', e.target.value)}
+            placeholder="C1"
+          />
+        </div>
+      ))}
     </div>
+  )
 }
-export {LanguageForm};
+
+export { LanguageForm }

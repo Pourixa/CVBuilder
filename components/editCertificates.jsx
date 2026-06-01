@@ -1,16 +1,27 @@
-import { Input } from "./input";
+import { Input } from './input'
 
 const fields = [
-    {label:"Certificate" , type:"text" , placeholder:"Machine Learning"},
-            { label: "Date", type: "date", placeholder: "25/02/1998" },
+  { label: 'Certificate', name: 'certificate', type: 'text', placeholder: 'Machine Learning' },
+  { label: 'Date', name: 'date', type: 'date', placeholder: '25/02/1998' }
 ]
 
-function CertificateForm()
-{
-    return <div className="editCertificate">
-        {fields.map((field) => {
-            return <Input key={field.label} {...field}/>;
-        })}
+function CertificateForm({ certificates, onCertificateChange }) {
+  return (
+    <div className="editCertificate">
+      {certificates.map((certificate, index) => (
+        <div key={certificate.id}>
+          {fields.map(field => (
+            <Input
+              key={field.name}
+              value={certificate[field.name] || ''}
+              onChange={e => onCertificateChange(index, field.name, e.target.value)}
+              {...field}
+            />
+          ))}
+        </div>
+      ))}
     </div>
+  )
 }
-export {CertificateForm}
+
+export { CertificateForm }
