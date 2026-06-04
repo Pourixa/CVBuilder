@@ -4,7 +4,7 @@ function LanguageForm({ languages, onLanguageChange }) {
   return (
     <div className="editLanguage">
       {languages.map((language, index) => (
-        <div key={language.id}>
+        <div key={language.id} className='singleLang'>
           <Input
             label="Language"
             name="language"

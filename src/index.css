@@ -241,3 +241,28 @@ margin-bottom: 0.5em;}
 }
 
 
+/* ////// */
+
+.folded 
+{
+padding: 0.5em;
+padding-top: 0.5em;
+background-color:blue;
+}
+
+.notfolded
+{
+padding: 1em;
+padding-top: 0.5em;
+background-color:red;
+display: grid;
+gap: 0.5em;
+}
+
+.experienceTitle
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 0.5em;
+}

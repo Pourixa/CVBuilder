@@ -12,7 +12,7 @@ function EducationForm({ educations, onEducationChange }) {
   return (
     <div className="editEducation">
       {educations.map((education, index) => (
-        <div key={education.id}>
+        <div key={education.id} className='singleEdu'>
           {fields.map(field => (
             <Input
               key={field.name}

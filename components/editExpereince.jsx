@@ -1,5 +1,4 @@
-import { Input } from './input'
-
+import { SingleExps } from './singleExp'
 const fields = [
   { label: 'Job', name: 'job', type: 'text', placeholder: 'Engineer' },
   { label: 'Company', name: 'company', type: 'text', placeholder: 'Microsoft' },
@@ -10,28 +9,7 @@ const fields = [
 function JobForm({ experiences, onExperienceChange }) {
   return (
     <div className="editExperience">
-      {experiences.map((experience, index) => (
-        <div key={experience.id}>
-          {fields.map(field => (
-            <Input
-              key={field.name}
-              value={experience[field.name] || ''}
-              onChange={e => onExperienceChange(index, field.name, e.target.value)}
-              {...field}
-            />
-          ))}
-          <div className="Input">
-            <h3>Achievements</h3>
-            <textarea
-              name="achievements"
-              value={experience.achievements.join('\n')}
-              onChange={e =>
-                onExperienceChange(index, 'achievements', e.target.value.split('\n'))
-              }
-            />
-          </div>
-        </div>
-      ))}
+      <SingleExps fields={fields} experiences = {experiences} onExperienceChange = {onExperienceChange}/>
     </div>
   )
 }

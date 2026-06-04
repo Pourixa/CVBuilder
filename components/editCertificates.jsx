@@ -9,7 +9,7 @@ function CertificateForm({ certificates, onCertificateChange }) {
   return (
     <div className="editCertificate">
       {certificates.map((certificate, index) => (
-        <div key={certificate.id}>
+        <div key={certificate.id} className='singleCert'>
           {fields.map(field => (
             <Input
               key={field.name}
