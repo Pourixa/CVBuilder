@@ -259,7 +259,8 @@ display: grid;
 gap: 0.5em;
 }
 
-.experienceTitle
+.experienceTitle , .educationTitle , .certificateTitle,
+.languageTitle
 {
     display: flex;
     align-items: center;

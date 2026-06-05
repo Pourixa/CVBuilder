@@ -1,5 +1,4 @@
-import { Input } from './input'
-
+import { SingleCert } from "./singleCert"
 const fields = [
   { label: 'Certificate', name: 'certificate', type: 'text', placeholder: 'Machine Learning' },
   { label: 'Date', name: 'date', type: 'date', placeholder: '25/02/1998' }
@@ -8,18 +7,7 @@ const fields = [
 function CertificateForm({ certificates, onCertificateChange }) {
   return (
     <div className="editCertificate">
-      {certificates.map((certificate, index) => (
-        <div key={certificate.id} className='singleCert'>
-          {fields.map(field => (
-            <Input
-              key={field.name}
-              value={certificate[field.name] || ''}
-              onChange={e => onCertificateChange(index, field.name, e.target.value)}
-              {...field}
-            />
-          ))}
-        </div>
-      ))}
+<SingleCert certificates={certificates} onCertificateChange={onCertificateChange} fields={fields}/>
     </div>
   )
 }

@@ -7,20 +7,6 @@ function SingleExps({ fields,experiences, onExperienceChange })
     {
       if(e.currentTarget == e.target || e.target == e.currentTarget.firstChild)
       setFold(prev => !prev)   
-      // if(folded)
-      // {
-
-      //   e.currentTarget.childNodes.forEach(a=>{a.style.display = "none"});
-      //   let a = e.currentTarget.firstChild;
-      //   a.style.display = "flex";
-      // }
-      // else 
-      // {
-      //   e.currentTarget.childNodes.forEach(a=>{a.style.display = "block"});
-      //   const a = e.currentTarget.firstChild;
-      //   a.style.display = "flex";
-
-      // }
     }
     return <>{experiences.map((experience, index) => (
         <div key={experience.id}  className={(folded ? "folded" : "notfolded")} onClick = {(e) => handleFold(e)} >

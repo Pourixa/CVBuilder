@@ -1,4 +1,4 @@
-import { Input } from './input'
+import { SingleEducation } from "./singleEducation"
 
 const fields = [
   { label: 'Formation', name: 'formation', type: 'text', placeholder: 'Computer Science' },
@@ -11,18 +11,7 @@ const fields = [
 function EducationForm({ educations, onEducationChange }) {
   return (
     <div className="editEducation">
-      {educations.map((education, index) => (
-        <div key={education.id} className='singleEdu'>
-          {fields.map(field => (
-            <Input
-              key={field.name}
-              value={education[field.name] || ''}
-              onChange={e => onEducationChange(index, field.name, e.target.value)}
-              {...field}
-            />
-          ))}
-        </div>
-      ))}
+      <SingleEducation educations= {educations} onEducationChange={onEducationChange} fields= {fields}/>
     </div>
   )
 }
