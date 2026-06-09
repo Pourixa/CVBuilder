@@ -3,15 +3,14 @@ import { useState } from "react";
 function SingleEducation({educations,fields,onEducationChange})
 {
         const [folded , setFold] = useState(false);
-        function handleFold(e)
+        function handleFold()
         {
-          if(e.currentTarget == e.target || e.target == e.currentTarget.firstChild)
           setFold(prev => !prev)   
         }
       return<>
           {educations.map((education, index) => (
-            <div key={education.id}  className={(folded ? "folded" : "notfolded")} onClick={e=>handleFold(e)}>
-            <div className="educationTitle">
+            <div key={education.id}  className={(folded ? "folded" : "notfolded")} >
+            <div className="educationTitle" onClick={handleFold}>
                 <p>{education["formation"]}</p>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" version="1.1" id="Capa_1" width="16px" height="16px" viewBox="0 0 30.727 30.727" xml:space="preserve">
                   <g>

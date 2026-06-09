@@ -3,15 +3,14 @@ import { useState } from "react";
 function SingleCert({certificates,fields,onCertificateChange})
 {
     const [folded , setFold] = useState(false);
-    function handleFold(e)
+    function handleFold()
     {
-        if(e.currentTarget == e.target || e.target == e.currentTarget.firstChild)
         setFold(prev => !prev)   
     }
     return <>
           {certificates.map((certificate, index) => (
-        <div key={certificate.id} className={(folded ? "folded" : "notfolded")} onClick={e=>handleFold(e)}>
-            <div className="certificateTitle">
+        <div key={certificate.id} className={(folded ? "folded" : "notfolded")}>
+            <div className="certificateTitle" onClick={handleFold}>
             <p>{certificate.certificate}</p>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" version="1.1" id="Capa_1" width="16px" height="16px" viewBox="0 0 30.727 30.727" xml:space="preserve">
               <g>
