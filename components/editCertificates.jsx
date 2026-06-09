@@ -1,3 +1,4 @@
+import { AddButton } from "./addbutton"
 import { SingleCert } from "./singleCert"
 const fields = [
   { label: 'Certificate', name: 'certificate', type: 'text', placeholder: 'Machine Learning' },
@@ -7,6 +8,7 @@ const fields = [
 function CertificateForm({ certificates, onCertificateChange }) {
   return (
     <div className="editCertificate">
+<AddButton/>
 <SingleCert certificates={certificates} onCertificateChange={onCertificateChange} fields={fields}/>
     </div>
   )

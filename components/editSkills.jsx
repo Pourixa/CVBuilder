@@ -1,8 +1,10 @@
+import { AddButton } from './addbutton'
 import { Input } from './input'
 
 function SkillForm({ skills, onSkillChange }) {
   return (
     <div className="editSkill">
+      <AddButton/>
       {skills.map((skill, index) => (
         <Input
           key={index}

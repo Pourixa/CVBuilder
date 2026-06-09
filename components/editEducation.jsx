@@ -1,3 +1,4 @@
+import { AddButton } from "./addbutton"
 import { SingleEducation } from "./singleEducation"
 
 const fields = [
@@ -11,6 +12,7 @@ const fields = [
 function EducationForm({ educations, onEducationChange }) {
   return (
     <div className="editEducation">
+      <AddButton/>
       <SingleEducation educations= {educations} onEducationChange={onEducationChange} fields= {fields}/>
     </div>
   )

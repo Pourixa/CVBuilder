@@ -1,3 +1,4 @@
+import { AddButton } from './addbutton'
 import { SingleExps } from './singleExp'
 const fields = [
   { label: 'Job', name: 'job', type: 'text', placeholder: 'Engineer' },
@@ -9,7 +10,9 @@ const fields = [
 function JobForm({ experiences, onExperienceChange }) {
   return (
     <div className="editExperience">
+            <AddButton/>
       <SingleExps fields={fields} experiences = {experiences} onExperienceChange = {onExperienceChange}/>
+
     </div>
   )
 }
