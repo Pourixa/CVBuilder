@@ -1,6 +1,6 @@
-function AddButton()
+function AddButton({addFunction})
 {
-    return <button className="addButton">
+    return <button className="addButton" onClick={addFunction}>
         Add
     </button>
 }

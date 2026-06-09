@@ -124,13 +124,34 @@ function App() {
       )
     }))
   }
+  const handleAddExperience = () => 
+  {
+    const idx = data.experiences.length;
+    setData(prev => ({
+      ...prev,
+      experiences: [
+        ...prev["experiences"],
+   {
+      id: 'exp-'+idx+1,
+      job: 'Data Analyst',
+      company: 'Nowhere land',
+      startDate: '2025-12-23',
+      endDate: '2026-12-24',
+      achievements: ['Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, consequuntur!']
+    }
+    ]
+    }))
+  }
 
   return (
     <>
       <Edit
         data={data}
         onGeneralChange={handleGeneralChange}
+  
         onExperienceChange={handleExperienceChange}
+        onExperienceAdd = {handleAddExperience}
+        
         onEducationChange={handleEducationChange}
         onCertificateChange={handleCertificateChange}
         onSkillChange={handleSkillChange}
