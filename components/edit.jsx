@@ -8,8 +8,11 @@ import { SkillForm } from './editSkills'
 function Edit({
   data,
   onGeneralChange,
+
   onExperienceChange,
   onExperienceAdd,
+  onExperienceDelete,
+  
   onEducationChange,
   onCertificateChange,
   onSkillChange,
@@ -18,7 +21,7 @@ function Edit({
   return (
     <div className="edit">
       <EditHeader generalInfo={data.generalInfo} onGeneralChange={onGeneralChange} />
-      <JobForm experiences={data.experiences} onExperienceChange={onExperienceChange} onExperienceAdd = {onExperienceAdd}/>
+      <JobForm experiences={data.experiences} onExperienceChange={onExperienceChange} onExperienceAdd = {onExperienceAdd} onExperienceDelete = {onExperienceDelete}/>
       <EducationForm educations={data.educations} onEducationChange={onEducationChange} />
       <CertificateForm certificates={data.certificates} onCertificateChange={onCertificateChange} />
       <SkillForm skills={data.skills} onSkillChange={onSkillChange} />

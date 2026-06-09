@@ -142,6 +142,15 @@ function App() {
     ]
     }))
   }
+  const handleDeleteExperience = (index) =>
+  {
+    let arrayCopy = [...data.experiences]
+    arrayCopy.splice(index,1)
+    setData(prev => ({
+      ...prev,
+      experiences:arrayCopy
+    }))
+  }
 
   return (
     <>
@@ -151,7 +160,8 @@ function App() {
   
         onExperienceChange={handleExperienceChange}
         onExperienceAdd = {handleAddExperience}
-        
+        onExperienceDelete = {handleDeleteExperience}
+
         onEducationChange={handleEducationChange}
         onCertificateChange={handleCertificateChange}
         onSkillChange={handleSkillChange}

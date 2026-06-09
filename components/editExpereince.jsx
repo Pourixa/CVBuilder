@@ -7,11 +7,11 @@ const fields = [
   { label: 'End date', name: 'endDate', type: 'date', placeholder: '25/03/1998' }
 ]
 
-function JobForm({ experiences, onExperienceChange , onExperienceAdd}) {
+function JobForm({ experiences, onExperienceChange , onExperienceAdd , onExperienceDelete}) {
   return (
     <div className="editExperience">
             <AddButton addFunction = {onExperienceAdd}/>
-      <SingleExps fields={fields} experiences = {experiences} onExperienceChange = {onExperienceChange}/>
+      <SingleExps fields={fields} experiences = {experiences} onExperienceChange = {onExperienceChange} onExperienceDelete = {onExperienceDelete}/>
 
     </div>
   )

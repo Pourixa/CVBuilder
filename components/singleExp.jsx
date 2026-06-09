@@ -1,15 +1,16 @@
 import { Input } from "./input";
 import { useState } from "react";
-function SingleExps({ fields,experiences, onExperienceChange })
+import { DeleteButton } from "./deleteButton";
+function SingleExps({ fields,experiences, onExperienceChange ,onExperienceDelete})
 {
-    const [folded , setFold] = useState(false);
-    function handleFold()
+    const [unfolded , setUnFold] = useState(0);
+    function handleFold(index)
     {
-      setFold(prev => !prev)   
+      setUnFold(index);   
     }
     return <>{experiences.map((experience, index) => (
-        <div key={experience.id}  className={(folded ? "folded" : "notfolded")}>
-          <div className="experienceTitle" onClick = {handleFold} >
+        <div key={experience.id}  className={(unfolded==index ? "notfolded" : "folded")}>
+          <div className="experienceTitle" onClick = {e =>handleFold(index)} >
             <p>{experience.job}</p>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" version="1.1" id="Capa_1" width="16px" height="16px" viewBox="0 0 30.727 30.727" xml:space="preserve">
               <g>
@@ -23,11 +24,11 @@ function SingleExps({ fields,experiences, onExperienceChange })
               value={experience[field.name] || ''}
               onChange={e => onExperienceChange(index, field.name, e.target.value)}
               {...field}
-              style = {{display :folded ? "none" : "flex"}}
+              style = {{display :unfolded == index ? "flex" : "none"}}
             />
           ))}
           <div
-            style = {{display :folded ? "none" : "flex"}}
+            style = {{display :unfolded == index ? "flex" : "none"}}
            className="Input">
             <h3>Achievements</h3>
             <textarea
@@ -38,6 +39,7 @@ function SingleExps({ fields,experiences, onExperienceChange })
               }
             />
           </div>
+          <DeleteButton DeleteFunction={e=>onExperienceDelete(index)}/>
         </div>
       ))}</>
 }
