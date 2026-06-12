@@ -205,6 +205,26 @@ function App() {
     }))
   }
 
+    const handleAddSkill = () => 
+  {
+    setData(prev => ({
+      ...prev,
+      skills: [
+        ...prev.skills,
+        ["newSkill"]
+    ]
+    }))
+  }
+  const handleDeleteSkill = (index) =>
+  {
+    let arrayCopy = [...data.skills]
+    arrayCopy.splice(index,1)
+    setData(prev => ({
+      ...prev,
+      skills:arrayCopy
+    }))
+  }
+
   return (
     <>
       <Edit
@@ -224,6 +244,9 @@ function App() {
         onCertificateDelete = {handleDeleteCertificate}
         
         onSkillChange={handleSkillChange}
+        onSkillAdd = {handleAddSkill}
+        onSkillDelete = {handleDeleteSkill}
+
         onLanguageChange={handleLanguageChange}
       />
       <CVPage data={data} />

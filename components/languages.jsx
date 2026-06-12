@@ -9,12 +9,14 @@ function Language({ language, level }) {
 
 function Languages({ languages }) {
   return (
-    <div className="languages">
-      <h2>LANGUAGES</h2>
-      {languages.map(item => (
-        <Language key={item.id} {...item} />
-      ))}
-    </div>
+    <>
+      {languages.length > 0 && <div className="languages">
+        <h2>LANGUAGES</h2>
+        {languages.map(item => (
+          <Language key={item.id} {...item} />
+        ))}
+      </div>}
+    </>
   )
 }
 

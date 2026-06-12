@@ -17,12 +17,14 @@ function Education({ formation, degree, university, startDate, endDate }) {
 
 function Educations({ educations }) {
   return (
-    <div className="educations">
-      <h2>EDUCATION</h2>
-      {educations.map(item => (
-        <Education key={item.id} {...item} />
-      ))}
-    </div>
+    <>
+{educations.length > 0 &&      <div className="educations">
+        <h2>EDUCATION</h2>
+        {educations.map(item => (
+          <Education key={item.id} {...item} />
+        ))}
+      </div>}
+    </>
   )
 }
 

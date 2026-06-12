@@ -11,12 +11,14 @@ function Certificate({ certificate, date }) {
 
 function Certificates({ certificates }) {
   return (
-    <div className="certificates">
-      <h2>CERTIFICATES</h2>
-      {certificates.map(item => (
-        <Certificate key={item.id} {...item} />
-      ))}
-    </div>
+    <>
+      {certificates.length > 0 && <div className="certificates">
+        <h2>CERTIFICATES</h2>
+        {certificates.map(item => (
+          <Certificate key={item.id} {...item} />
+        ))}
+      </div>}
+    </>
   )
 }
 

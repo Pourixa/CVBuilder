@@ -18,14 +18,16 @@ function Experience({ job, company, startDate, endDate, achievements }) {
 }
 
 function Experiences({ experiences }) {
-  return (
-    <div className="experiences">
-      <h2>EXPERIENCE</h2>
-      {experiences.map(item => (
-        <Experience key={item.id} {...item} />
-      ))}
-    </div>
-  )
+  return <>
+    {experiences.length > 0 && 
+      <div className="experiences">
+        <h2>EXPERIENCE</h2>
+        {experiences.map(item => (
+          <Experience key={item.id} {...item} />
+        ))}
+      </div>
+   }
+ </>
 }
 
 export { Experiences }

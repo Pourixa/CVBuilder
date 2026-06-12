@@ -363,3 +363,12 @@ background-color: var(--firstColor);
     transform: rotate(180deg);
 }
 
+/* ///// */
+
+.editSkill > div {
+    background-color: var(--secondColor);
+    padding: 0.5em;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+}

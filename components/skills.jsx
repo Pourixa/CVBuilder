@@ -4,12 +4,14 @@ function Skill({ skill }) {
 
 function Skills({ skills }) {
   return (
-    <div className="skills">
-      <h2>SKILLS</h2>
-      {skills.map((skill, index) => (
-        <Skill key={index} skill={skill} />
-      ))}
-    </div>
+    <>
+     {skills.length > 0 && <div className="skills">
+        <h2>SKILLS</h2>
+        {skills.map((skill, index) => (
+          <Skill key={index} skill={skill} />
+        ))}
+      </div>}
+    </>
   )
 }
 
