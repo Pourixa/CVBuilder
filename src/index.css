@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     font-family: Roboto;
+    
 }
 
 :root
@@ -58,9 +59,9 @@ body {
         margin: .5em;
     padding: .5em;
     max-width: 21cm;
-    max-height: 29.7cm;
+    max-height: 28cm;
     min-width: 21cm;
-    min-height: 29.7cm;
+    min-height: 28cm;
     background-color: white;
     overflow: hidden;
 }
@@ -166,7 +167,7 @@ border: none
         padding-left: 0.5em;
         padding-right: 0.5em;
         justify-self: center;
-        justify-content: center;
+        justify-content: space-between;
 
 }
 .certificates > h2
@@ -270,12 +271,21 @@ display: grid;
 gap: 0.5em;
 }
 
-.experienceTitle > svg {
+.experienceTitle > svg,
+ .educationTitle > svg,
+ .certificateTitle > svg ,
+ .languageTitle > svg 
+ {
     transition: transform 1s ease;
 }
 
-.notfolded > .experienceTitle > svg {
-    transform: rotate(180deg);
+.notfolded > .experienceTitle > svg , 
+.notfolded > .educationTitle > svg,
+.notfolded > .certificateTitle > svg ,
+ .notfolded > .languageTitle > svg 
+
+{
+   transform: rotate(180deg);
 }
 
 .experienceTitle , .educationTitle , .certificateTitle,
@@ -285,6 +295,8 @@ gap: 0.5em;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 0.5em;
+            overflow: hidden;
+
         cursor: pointer;
 }
 
@@ -377,3 +389,77 @@ background-color: var(--firstColor);
     display: grid;
     justify-content: center;
 }
+
+.editExperience >div , .editEducation > div , .editCertificate > div ,
+.editLanguage > div{
+    border-radius: 10px;
+}
+
+.print 
+{
+grid-column: 1/3;
+padding: 0.5em;
+margin-top: 0.5em;
+background-color: green;
+border: none;
+align-self: center;
+min-width: 50%;
+justify-self: center;
+transition: all 1s ease;
+border-radius: 10px;
+border: black solid 2px;
+}
+
+.emptyPage 
+{
+grid-column: 1/3;
+padding: 0.5em;
+margin-top: 0.5em;
+background-color: var(--secondColor);
+border: none;
+align-self: center;
+min-width: 50%;
+justify-self: center;
+transition: all 1s ease;
+border-radius: 10px;
+border: black solid 2px;
+}
+
+/* print */
+
+@media print {
+body{
+    visibility: hidden;
+}
+.CVPage
+{
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+} 
+
+}
+.print:hover
+{
+    transform: translate(0,-0.25em);
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.288);
+}
+.print:active
+{
+    transform: scale(0.9,0.9);
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.288);
+}
+
+.emptyPage:hover
+{
+    transform: translate(0,-0.25em);
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.288);
+}
+.emptyPage:active
+{
+    transform: scale(0.9,0.9);
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.288);
+}
+
+

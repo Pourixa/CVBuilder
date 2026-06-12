@@ -27,10 +27,14 @@ function Edit({
 
   onLanguageChange,
   onLanguageAdd,
-  onLanguageDelete
+  onLanguageDelete,
+
+  emptyData
 }) {
   return (
     <div className="edit">
+      <button className='print' onClick={window.print}>PRINT</button>
+      <button className='emptyPage' onClick={emptyData}>Start From Scratch</button>
       <EditHeader generalInfo={data.generalInfo} onGeneralChange={onGeneralChange} />
       <JobForm experiences={data.experiences} onExperienceChange={onExperienceChange} onExperienceAdd = {onExperienceAdd} onExperienceDelete = {onExperienceDelete}/>
       <EducationForm educations={data.educations} onEducationChange={onEducationChange} onEducationAdd = {onEducationAdd} onEducationDelete={onEducationDelete}/>

@@ -249,6 +249,27 @@ function App() {
       languages:arrayCopy
     }))
   }
+  const emptyPage = () =>
+  {
+    setData(
+      {
+    generalInfo: {
+    firstname: '',
+    lastname: '',
+    profession: '',
+    telephone: '',
+    email: '',
+    linkedin: '',
+    location: ''
+  },
+  experiences: [],
+  educations: [],
+  certificates: [],
+  skills: [],
+  languages: []
+}
+    )
+  }
 
   return (
     <>
@@ -275,8 +296,8 @@ function App() {
         onLanguageChange = {handleLanguageChange}
         onLanguageAdd = {handleAddLanguage}
         onLanguageDelete = {handleDeleteLanguage}
-
         
+        emptyData = {emptyPage}
       />
       <CVPage data={data} />
     </>
