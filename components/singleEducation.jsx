@@ -1,16 +1,17 @@
 import { Input } from "./input"
 import { useState } from "react";
-function SingleEducation({educations,fields,onEducationChange})
+import { DeleteButton } from "./deleteButton";
+function SingleEducation({educations,fields,onEducationChange , onEducationDelete})
 {
-        const [folded , setFold] = useState(false);
-        function handleFold()
-        {
-          setFold(prev => !prev)   
-        }
+    const [unfolded , setUnFold] = useState(0);
+    function handleFold(index)
+    {
+      setUnFold(index);   
+    }
       return<>
           {educations.map((education, index) => (
-            <div key={education.id}  className={(folded ? "folded" : "notfolded")} >
-            <div className="educationTitle" onClick={handleFold}>
+            <div key={education.id}  className={(unfolded ==index ? "notfolded" : "folded")} >
+            <div className="educationTitle" onClick={() => handleFold(index)}>
                 <p>{education["formation"]}</p>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" version="1.1" id="Capa_1" width="16px" height="16px" viewBox="0 0 30.727 30.727" xml:space="preserve">
                   <g>
@@ -24,9 +25,10 @@ function SingleEducation({educations,fields,onEducationChange})
                   value={education[field.name] || ''}
                   onChange={e => onEducationChange(index, field.name, e.target.value)}
                   {...field}
-                  style = {{display :folded ? "none" : "flex"}}
+                  style = {{display :unfolded == index ? "flex" : "none "}}
                 />
               ))}
+              <DeleteButton DeleteFunction={()=>onEducationDelete(index)}/>
             </div>
           ))}
       </>

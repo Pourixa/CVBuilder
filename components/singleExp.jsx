@@ -10,7 +10,7 @@ function SingleExps({ fields,experiences, onExperienceChange ,onExperienceDelete
     }
     return <>{experiences.map((experience, index) => (
         <div key={experience.id}  className={(unfolded==index ? "notfolded" : "folded")}>
-          <div className="experienceTitle" onClick = {e =>handleFold(index)} >
+          <div className="experienceTitle" onClick = {()=>handleFold(index)} >
             <p>{experience.job}</p>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" version="1.1" id="Capa_1" width="16px" height="16px" viewBox="0 0 30.727 30.727" xml:space="preserve">
               <g>
@@ -39,7 +39,7 @@ function SingleExps({ fields,experiences, onExperienceChange ,onExperienceDelete
               }
             />
           </div>
-          <DeleteButton DeleteFunction={e=>onExperienceDelete(index)}/>
+          <DeleteButton DeleteFunction={()=>onExperienceDelete(index)}/>
         </div>
       ))}</>
 }

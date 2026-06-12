@@ -152,6 +152,34 @@ function App() {
     }))
   }
 
+  const handleAddEducation = () => 
+  {
+    const idx = data.experiences.length;
+    setData(prev => ({
+      ...prev,
+      educations: [
+        ...prev.educations,
+    {
+      id: 'edu-'+idx+1,
+      formation: 'Computer Science',
+      degree: 'License',
+      university: 'New York',
+      startDate: '2022-09-01',
+      endDate: '2025-06-30'
+    }
+    ]
+    }))
+  }
+  const handleDeleteEducation = (index) =>
+  {
+    let arrayCopy = [...data.educations]
+    arrayCopy.splice(index,1)
+    setData(prev => ({
+      ...prev,
+      educations:arrayCopy
+    }))
+  }
+
   return (
     <>
       <Edit
@@ -163,6 +191,9 @@ function App() {
         onExperienceDelete = {handleDeleteExperience}
 
         onEducationChange={handleEducationChange}
+        onEducationAdd = {handleAddEducation}
+        onEducationDelete = {handleDeleteEducation}
+
         onCertificateChange={handleCertificateChange}
         onSkillChange={handleSkillChange}
         onLanguageChange={handleLanguageChange}

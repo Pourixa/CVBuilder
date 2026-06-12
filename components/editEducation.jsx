@@ -1,5 +1,7 @@
 import { AddButton } from "./addbutton"
+import { Title } from "./editTitle"
 import { SingleEducation } from "./singleEducation"
+import { useState } from "react"
 
 const fields = [
   { label: 'Formation', name: 'formation', type: 'text', placeholder: 'Computer Science' },
@@ -9,12 +11,18 @@ const fields = [
   { label: 'End date', name: 'endDate', type: 'date', placeholder: '25/03/1998' }
 ]
 
-function EducationForm({ educations, onEducationChange }) {
+function EducationForm({ educations, onEducationChange ,onEducationAdd , onEducationDelete}) {
+     const [folded,setFolded] = useState(true);
+ 
+ 
   return (
-    <div className="editEducation">
-      <AddButton/>
-      <SingleEducation educations= {educations} onEducationChange={onEducationChange} fields= {fields}/>
-    </div>
+    <>
+    <Title name={"Educations"} folded={folded} onToggle={() => {setFolded(!folded)}}/>
+    {!folded && <div className="editEducation">
+      <AddButton addFunction={onEducationAdd}/>
+      <SingleEducation educations= {educations} onEducationChange={onEducationChange} onEducationDelete = {onEducationDelete} fields= {fields}/>
+    </div>}
+  </>
   )
 }
 
