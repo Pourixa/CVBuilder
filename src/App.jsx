@@ -154,7 +154,7 @@ function App() {
 
   const handleAddEducation = () => 
   {
-    const idx = data.experiences.length;
+    const idx = data.educations.length;
     setData(prev => ({
       ...prev,
       educations: [
@@ -180,6 +180,31 @@ function App() {
     }))
   }
 
+    const handleAddCertificate = () => 
+  {
+    const idx = data.certificates.length;
+    setData(prev => ({
+      ...prev,
+      certificates: [
+        ...prev.certificates,
+    {
+      id: 'cert-'+idx+1,
+      certificate: 'Machine Learning',
+      date: '2023-11-01'
+    }
+    ]
+    }))
+  }
+  const handleDeleteCertificate = (index) =>
+  {
+    let arrayCopy = [...data.certificates]
+    arrayCopy.splice(index,1)
+    setData(prev => ({
+      ...prev,
+      certificates:arrayCopy
+    }))
+  }
+
   return (
     <>
       <Edit
@@ -195,6 +220,9 @@ function App() {
         onEducationDelete = {handleDeleteEducation}
 
         onCertificateChange={handleCertificateChange}
+        onCertificateAdd = {handleAddCertificate}
+        onCertificateDelete = {handleDeleteCertificate}
+        
         onSkillChange={handleSkillChange}
         onLanguageChange={handleLanguageChange}
       />

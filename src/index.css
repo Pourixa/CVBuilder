@@ -344,10 +344,14 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.288);
     align-items: center;
     border-radius: 10px;
     background-color: var(--secondColor);
+    margin-bottom: 0.5em;
+}
+.title:hover {
+    cursor: pointer;
 }
 .title > svg 
 {
-    transition: transform 1s ease;
+    transition: transform 0.3s ease;
 }
 
 .editNotFold

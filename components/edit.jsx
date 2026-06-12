@@ -18,6 +18,9 @@ function Edit({
   onEducationDelete,
 
   onCertificateChange,
+  onCertificateAdd ,
+  onCertificateDelete ,
+
   onSkillChange,
   onLanguageChange
 }) {
@@ -26,7 +29,7 @@ function Edit({
       <EditHeader generalInfo={data.generalInfo} onGeneralChange={onGeneralChange} />
       <JobForm experiences={data.experiences} onExperienceChange={onExperienceChange} onExperienceAdd = {onExperienceAdd} onExperienceDelete = {onExperienceDelete}/>
       <EducationForm educations={data.educations} onEducationChange={onEducationChange} onEducationAdd = {onEducationAdd} onEducationDelete={onEducationDelete}/>
-      <CertificateForm certificates={data.certificates} onCertificateChange={onCertificateChange} />
+      <CertificateForm certificates={data.certificates} onCertificateChange={onCertificateChange} onCertificateAdd = {onCertificateAdd} onCertificateDelete = {onCertificateDelete}/>
       <SkillForm skills={data.skills} onSkillChange={onSkillChange} />
       <LanguageForm languages={data.languages} onLanguageChange={onLanguageChange} />
     </div>

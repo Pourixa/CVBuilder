@@ -1,16 +1,17 @@
+import { DeleteButton } from "./deleteButton";
 import { Input } from "./input";
 import { useState } from "react";
-function SingleCert({certificates,fields,onCertificateChange})
+function SingleCert({certificates,fields,onCertificateChange , onCertificateDelete})
 {
-    const [folded , setFold] = useState(false);
-    function handleFold()
+    const [unfolded , setUnFold] = useState(0);
+    function handleFold(index)
     {
-        setFold(prev => !prev)   
+      setUnFold(index);   
     }
     return <>
           {certificates.map((certificate, index) => (
-        <div key={certificate.id} className={(folded ? "folded" : "notfolded")}>
-            <div className="certificateTitle" onClick={handleFold}>
+        <div key={certificate.id} className={(unfolded == index ? "notfolded" : "folded")}>
+            <div className="certificateTitle" onClick={() =>handleFold(index)}>
             <p>{certificate.certificate}</p>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" version="1.1" id="Capa_1" width="16px" height="16px" viewBox="0 0 30.727 30.727" xml:space="preserve">
               <g>
@@ -24,9 +25,10 @@ function SingleCert({certificates,fields,onCertificateChange})
               value={certificate[field.name] || ''}
               onChange={e => onCertificateChange(index, field.name, e.target.value)}
               {...field}
-              style = {{display :folded ? "none" : "flex"}}
+              style = {{display :unfolded == index ? "flex" : "none"}}
             />
           ))}
+          <DeleteButton DeleteFunction={() => onCertificateDelete(index)}/>
         </div>
       ))}</>
 }
