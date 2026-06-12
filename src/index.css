@@ -338,8 +338,10 @@ box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.288);
 
 .title {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 0.5em;
+    padding-left: 4em;
+    padding-right: 4em;
     border: 5px solid black;
     align-items: center;
     border-radius: 10px;
@@ -362,6 +364,9 @@ background-color: var(--firstColor);
 {
     transform: rotate(180deg);
 }
+
+
+
 
 /* ///// */
 

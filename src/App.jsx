@@ -225,6 +225,31 @@ function App() {
     }))
   }
 
+    const handleAddLanguage = () => 
+  {
+        const idx = data.languages.length;
+    setData(prev => ({
+      ...prev,
+      languages: [
+        ...prev.languages,
+            {
+      id: 'lang-'+idx + 1,
+      language: 'French',
+      level: 'C1'
+    }
+    ]
+    }))
+  }
+  const handleDeleteLanguage = (index) =>
+  {
+    let arrayCopy = [...data.languages]
+    arrayCopy.splice(index,1)
+    setData(prev => ({
+      ...prev,
+      languages:arrayCopy
+    }))
+  }
+
   return (
     <>
       <Edit
@@ -247,7 +272,11 @@ function App() {
         onSkillAdd = {handleAddSkill}
         onSkillDelete = {handleDeleteSkill}
 
-        onLanguageChange={handleLanguageChange}
+        onLanguageChange = {handleLanguageChange}
+        onLanguageAdd = {handleAddLanguage}
+        onLanguageDelete = {handleDeleteLanguage}
+
+        
       />
       <CVPage data={data} />
     </>

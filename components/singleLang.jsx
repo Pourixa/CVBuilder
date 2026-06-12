@@ -1,16 +1,17 @@
+import { DeleteButton } from "./deleteButton";
 import { Input } from "./input";
 import { useState } from "react";
-function SingleLang({languages , onLanguageChange })
+function SingleLang({languages , onLanguageChange , onLanguageDelete })
 {
-            const [folded , setFold] = useState(false);
-        function handleFold()
-        {
-          setFold(prev => !prev)   
-        }
+    const [unfolded , setUnFold] = useState(0);
+    function handleFold(index)
+    {
+      setUnFold(index);   
+    }
     return <>
           {languages.map((language, index) => (
-        <div key={language.id} className={(folded ? "folded" : "notfolded")} >
-                        <div className="languageTitle" onClick={handleFold}>
+        <div key={language.id} className={(unfolded == index ? "notfolded" : "folded")} >
+                <div className="languageTitle" onClick={() => {handleFold(index)}}>
                 <p>{language.language}</p>
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" version="1.1" id="Capa_1" width="16px" height="16px" viewBox="0 0 30.727 30.727" xml:space="preserve">
                   <g>
@@ -25,7 +26,7 @@ function SingleLang({languages , onLanguageChange })
             value={language.language}
             onChange={e => onLanguageChange(index, 'language', e.target.value)}
             placeholder="French"
-            style = {{display :folded ? "none" : "flex"}}
+            style = {{display :unfolded == index ? "flex" : "none"}}
           />
           <Input
             label="Level"
@@ -34,8 +35,9 @@ function SingleLang({languages , onLanguageChange })
             value={language.level}
             onChange={e => onLanguageChange(index, 'level', e.target.value)}
             placeholder="C1"
-            style = {{display :folded ? "none" : "flex"}}
+            style = {{display :unfolded == index ? "flex" : "none"}}
           />
+          <DeleteButton DeleteFunction={() => onLanguageDelete(index)} />
         </div>
       ))}</>
 }

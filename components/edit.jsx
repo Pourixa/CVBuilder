@@ -25,7 +25,9 @@ function Edit({
   onSkillAdd,
   onSkillDelete,
 
-  onLanguageChange
+  onLanguageChange,
+  onLanguageAdd,
+  onLanguageDelete
 }) {
   return (
     <div className="edit">
@@ -34,7 +36,7 @@ function Edit({
       <EducationForm educations={data.educations} onEducationChange={onEducationChange} onEducationAdd = {onEducationAdd} onEducationDelete={onEducationDelete}/>
       <CertificateForm certificates={data.certificates} onCertificateChange={onCertificateChange} onCertificateAdd = {onCertificateAdd} onCertificateDelete = {onCertificateDelete}/>
       <SkillForm skills={data.skills} onSkillChange={onSkillChange} onSkillAdd = {onSkillAdd} onSkillDelete={onSkillDelete}/>
-      <LanguageForm languages={data.languages} onLanguageChange={onLanguageChange} />
+      <LanguageForm languages={data.languages} onLanguageChange={onLanguageChange} onLanguageAdd = {onLanguageAdd} onLanguageDelete={onLanguageDelete}/>
     </div>
   )
 }

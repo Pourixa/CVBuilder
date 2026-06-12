@@ -1,12 +1,18 @@
 import { AddButton } from "./addbutton"
+import { Title } from "./editTitle";
 import { SingleLang } from "./singleLang"
-
-function LanguageForm({ languages, onLanguageChange }) {
+import { useState } from "react"
+function LanguageForm({ languages, onLanguageChange , onLanguageAdd , onLanguageDelete }) {
+  const [folded,setFolded] = useState(true);
+  
   return (
-    <div className="editLanguage">
-      <AddButton/>
-        <SingleLang languages={languages} onLanguageChange={onLanguageChange}/>
-    </div>
+    <>
+      <Title folded={folded} onToggle={() => setFolded(!folded)} name={"Languages"} />
+      {!folded && <div className="editLanguage">
+        <AddButton addFunction={onLanguageAdd}/>
+          <SingleLang languages={languages} onLanguageChange={onLanguageChange} onLanguageDelete = {onLanguageDelete}/>
+      </div>}
+    </>
   )
 }
 
