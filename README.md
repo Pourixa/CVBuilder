@@ -62,6 +62,3 @@ Open the local URL printed by Vite. No environment variables are required.
 
 CV data is kept in memory: refreshing the page restores the example content. There is no account system, autosave, or cloud storage. The document uses a fixed page-sized layout with hidden overflow, so long CVs need further pagination work; the editor is best explored on a desktop-sized screen.
 
-## Verification
-
-The production build passed. The deployed editor was checked by changing a name and opening an experience form; the preview updated immediately. Screenshots were captured from the deployed application. The print dialog and PDF output were not part of that check. There is no automated test script in the current package configuration.
